@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+  font-weight: 400 500 700;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ===== Fonts ===== */
+  --font-sans: "Noto Sans", sans-serif;
+  --font-serif: "Noto Sans", sans-serif;
+  --font-mono: "Noto Sans", sans-serif;
+
+  /* ===== Colors ===== */
+  /* Neutral */
+  --color-neutral-0: hsl(200, 60%, 99%);
+  --color-neutral-100: hsl(0, 0%, 93%);
+  --color-neutral-200: hsl(217, 61%, 90%);
+  --color-neutral-700: hsl(225, 23%, 24%);
+  --color-neutral-800: hsl(226, 25%, 17%);
+  --color-neutral-900: hsl(227, 75%, 14%);
+
+  /* Reds */
+  --color-primary-red-400: hsl(3, 86%, 64%);
+  --color-primary-red-500: hsl(3, 71%, 56%);
+  --color-primary-red-600: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --color-light-grad-start: #ebf2fc;
+  --color-light-grad-end: #eef8f9;
+  --color-dark-grad-start: #040918;
+  --color-dark-grad-end: #091540;
+}
