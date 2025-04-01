@@ -1,12 +1,25 @@
+import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
+
 type FilterBtnProps = {
+  isActive: boolean;
   btnText: string;
+  onClick: () => void;
 };
 
-const FilterBtn = ({ btnText }: FilterBtnProps) => {
+const FilterBtn = ({ isActive, btnText, onClick }: FilterBtnProps) => {
   return (
-    <button className="font-base cursor-pointer rounded-3xl border border-neutral-100 bg-white px-6 py-2 text-lg text-neutral-900 shadow-sm transition hover:translate-y-[0.5px] hover:opacity-75">
+    <Button
+      className={cn(
+        "transition-colors",
+        isActive
+          ? "bg-primary-red-600 dark:bg-primary-red-600 text-neutral-0 border-0 dark:text-neutral-900"
+          : "",
+      )}
+      onClick={onClick}
+    >
       {btnText}
-    </button>
+    </Button>
   );
 };
 

@@ -1,18 +1,19 @@
 import CardGrid from "./components/CardGrid";
 import FilterTabs from "./components/FilterTabs";
 import Header from "./components/Header";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 function App() {
   return (
-    <div className="from-light-grad-start to-light-grad-end dark:from-dark-grad-start dark:to-dark-grad-end h-dvh bg-linear-to-b">
+    <ThemeProvider>
       <div className="mx-auto max-w-[1440px] px-4 py-5">
         <Header />
-        <main className="space-y-10">
+        <main className="space-y-10 lg:py-12">
           <FilterTabs />
           <CardGrid />
         </main>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
