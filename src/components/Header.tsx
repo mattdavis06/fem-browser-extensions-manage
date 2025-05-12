@@ -1,5 +1,5 @@
 import Logo from '../assets/icons/logo.svg?react'
-import ToggleBtn from './shared/ToggleBtn'
+import ThemeBtn from './shared/ThemeBtn'
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <Logo className="dark:text-neutral-0 text-neutral-900" />
       </div>
       <div>
-        <ToggleBtn />
+        <ThemeBtn />
       </div>
     </header>
   )

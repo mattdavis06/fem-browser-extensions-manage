@@ -1,3 +1,6 @@
+import { useExtensionStore } from '@/store/useExtensionStore'
+import RemoveBtn from './shared/RemoveBtn'
+import ToggleSwitch from './shared/ToggleSwitch'
 import { Card, CardFooter, CardHeader } from './ui/card'
 
 type ExtensionCardProps = {
@@ -10,6 +13,9 @@ type ExtensionCardProps = {
 }
 
 const ExtensionCard = ({ data }: ExtensionCardProps) => {
+  const toggleActive = useExtensionStore((state) => state.toggleActive)
+  const removeExtension = useExtensionStore((state) => state.removeExtension)
+
   return (
     <Card>
       <CardHeader>
@@ -27,7 +33,13 @@ const ExtensionCard = ({ data }: ExtensionCardProps) => {
       </CardHeader>
 
       <CardFooter>
-        <p>Card Footer</p>
+        <div className="flex w-full items-center justify-between">
+          <RemoveBtn onClick={() => removeExtension(data.name)} />
+          <ToggleSwitch
+            toggleActive={() => toggleActive(data.name)}
+            isActive={data.isActive}
+          />
+        </div>
       </CardFooter>
     </Card>
   )
